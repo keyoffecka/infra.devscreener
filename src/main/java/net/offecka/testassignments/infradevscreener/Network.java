@@ -23,9 +23,9 @@ public class Network implements Graph {
 	 * For example, if we have two connected nodes 1 and 2,
 	 * storing only the half of the matrix
 	 * would cause additional efforts to find out if 2 is joined to 1.
-   *
-   * An array based half-matrix would be more performance optimal,
-   * but may consume memory that otherwise would be free for missing connections.
+	 *
+	 * An array based half-matrix would be more performance optimal,
+	 * but may consume memory that otherwise would be free for missing connections.
 	 */
 	final Map<Integer, Set<Integer>> adjacentMatrix = new HashMap<>();
 
@@ -63,13 +63,13 @@ public class Network implements Graph {
 		boolean found = nodeId == otherNodeId;
 		if (!found) {
 			/*
-	     * This additional list allows using immutable node models.
-	     * (In this simple case, just integers.)
-	     * Otherwise we would need to store the visited flag somehow.
-	     * Besides, the visited flag should be cleared at the end,
-	     * and to avoid the traversal across all nodes,
-	     * we would anyway need to store a list of visited nodes.
-	     */
+			 * This additional list allows using immutable node models.
+			 * (In this simple case, just integers.)
+			 * Otherwise we would need to store the visited flag somehow.
+			 * Besides, the visited flag should be cleared at the end,
+			 * and to avoid the traversal across all nodes,
+			 * we would anyway need to store a list of visited nodes.
+			 */
 			ArrayList<Integer> visitedNodeIds = new ArrayList<>();
 			LinkedList<Integer> stack = new LinkedList<>();
 
